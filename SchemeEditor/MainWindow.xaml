@@ -1,0 +1,21 @@
+﻿<Window x:Class="SchemeEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchemeEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Width="179" >
+            <ListBox x:Name="listItems" Height="100" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="listItems_MouseDoubleClick"/>
+            
+        </StackPanel>
+        <Canvas Background="#FF143746" Margin="179,0,0,0">
+            <local:OperatorBlock Canvas.Left="470" Canvas.Top="113" />
+            <local:OperatorBlock Canvas.Left="47" Canvas.Top="163" />
+
+
+        </Canvas>
+    </Grid>
+</Window>

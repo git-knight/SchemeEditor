@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="SchemeEditor.OperatorBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchemeEditor"
+             mc:Ignorable="d" 
+             d:Width="90">
+    <UserControl.DataContext>
+        <local:OpBlockType/>
+    </UserControl.DataContext>
+    <Grid Background="#FF32320A" Width="90">
+        <Rectangle Stroke="#FFDDCEAC"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.ColumnSpan="2" Content="{Binding Path=Name}" HorizontalContentAlignment="Center" FontSize="10" Padding="5,1,5,5" Foreground="#FFDDCEAC"/>
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                <Separator Margin="1,0,1,4"/>
+            </StackPanel>
+            <ListBox Grid.Row="2" DisplayMemberPath="Name" ItemsSource="{Binding Path=InPins}"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDDCEAC" FontSize="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+            <ListBox x:Name="listOutPins" DisplayMemberPath="Name" ItemsSource="{Binding Path=OutPins}" Grid.Row="2" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFDDCEAC" FontSize="7" ScrollViewer.HorizontalScrollBarVisibility="Hidden" HorizontalContentAlignment="Right"/>
+
+        </Grid>
+    </Grid>
+</UserControl>
